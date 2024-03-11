@@ -17,6 +17,8 @@
                     <li><a href="#">Contato</a></li>
                 </ul>
                 <img src="Img Logo/17004.png" class="user-ft" onclick="toggleMenu()">
+            </nav>
+        </div>
 </header>
 <body> 
                 <div class="sub-menu-usuario" id="subMenu">
@@ -24,32 +26,32 @@
                         <div class="user-info">
                             <img src="Img Logo/17004.png" height="50px">
                             <h2>Perfil</h2>
-                            
                         </div>
                         <hr>
+                        <div class="Dados">
                             <p>Nome: <span id="profileName"></span></p>
                             <p>Email: <span id="profileEmail"></span></p>
-                        <a href="#" class="sub-menu-link">
-                            <img src="Img Logo/editar dados.png" height="50px">
-                            <p>Editar Dados</p>
-                            <span>></span>
-                        </a>
+                            <p>Idade: <span id="profileAge"></span></p>
+                            <p>Salario: <span id="profileSalary"></span></p>
+                            <p>Sexo: <span id="profileSexo"></span></p>
+                            <p>Telefone: <span id="profileTelephone"></span></p>
+                            <p>Senha: <span id="profilePassword"></span></p>
 
-                        <a href="#" class="sub-menu-link">
-                            <img src="Img Logo/excluir conta.png" height="50px">
-                            <p>Excluir Conta</p>
-                            <span>></span>
-                        </a>
-
-                        <a href="index.html" class="sub-menu-link">
-                            <img src="Img Logo/inicio.png" height="50px">
-                            <p>Inicio</p>
-                            <span>></span>
+                    </div>
                         </a>
                     </div>
                 </div>
-            </nav>
-        </div>
-        <script src="script.js"></script>
+                <button onclick="editProfile()"><img src="Img Logo/editar dados.png" height="50px">Editar Perfil </button>
+                <button onclick="deleteProfile()"><img src="Img Logo/excluir conta.png" height="50px">Excluir Conta </button>
+        <script>
+    const user = JSON.parse(localStorage['user']);
+    document.getElementById('profileName').innerText = user.name || 'Nome não fornecido';
+    document.getElementById('profileEmail').innerText = user.email || 'Email não fornecido';
+    document.getElementById('profileAge').innerText = user.age || 'idade não fornecido';
+    document.getElementById('profileSalary').innerText = user.salary || 'salario não fornecido';
+    document.getElementById('profileSexo').innerText = user.sex || 'sexo não fornecido';
+    document.getElementById('profileTelephone').innerText = user.telephone || 'sexo não fornecido';
+    document.getElementById('profilePassword').innerText = user.password || 'senha não fornecido';
+        </script>
 </body>
 </html>

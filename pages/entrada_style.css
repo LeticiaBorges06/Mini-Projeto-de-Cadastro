@@ -60,6 +60,10 @@ nav ul li a {
     overflow: hidden;
     transition: max-height 0.5s;
 }
+.Dados{
+    color: black
+}
+
 
 /*.sub-menu-usuario .open-menu {
     max-width: 400px;

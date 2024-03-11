@@ -1,0 +1,235 @@
+/*Cadrastro*/
+
+html {
+    height: 100%;
+}
+  
+body {
+    height: 100%;
+    padding: 3rem 0;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    background-color: #b9198c;
+    overflow-x: hidden;
+}
+  
+.signUpContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+  
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0rem;
+    border-radius: 5px;
+    width: 45%;
+    background-color: #b9198c;
+}
+  
+.formContainer>h1 {
+    margin-bottom: 1rem;
+    font-size: 30px;
+    font-weight: bold;
+}
+  
+.img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem 0;
+    display: none;
+}
+  
+input {
+    border: none;
+    border: 2px solid #df25ba51;
+    border-radius: 5px;
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    width: 70%;
+}
+  
+input:focus {
+    outline: none;
+    border: 2px solid #b9198c;
+    transition: 0.5s;
+}
+  
+.radioInputField {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.radioInputField p {
+    width: 50%;
+}
+  
+.radioInputField span {
+    display: flex;
+    align-items: center;
+}
+  
+.radioInputField label {
+    margin-right: 10px
+}
+  
+  .radioInputField input {
+    width: 20px;
+    height: 20px;
+    accent-color: #333398;
+  }
+  
+  .invalid {
+    border: 2px solid #fe4a49;
+    background-color: #fe494936;
+    box-shadow: 0 0 0 30px #fe494936 inset;
+  }
+  
+  .submitInput {
+    width: 75%;
+    padding: 0.8rem 2rem;
+    border-radius: 7px;
+    border: none;
+    background-color: #333398;
+    color: #fff;
+    margin: 1rem 0;
+    cursor: pointer;
+  }
+  
+  .submitInput:hover {
+    background-color: #333398ef;
+  }
+  
+  .submitInput:disabled {
+    background-color: #0000001f;
+    color: #00000061;
+  }
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  
+  .forgotPassword {
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+    width: 75%;
+    margin: 0.5rem 0;
+    font-size: 14px;
+    color: #333398;
+    text-decoration: underline;
+  }
+  
+  .loginLink {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #333398;
+  }
+  
+  .loginLink a {
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 5px;
+  }
+  
+  .loginForm {
+    display: none;
+  }
+  
+  .messageContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .notificationContainer {
+    display: none;
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    border-radius: 5px;
+    padding: 1rem;
+    font-weight: normal;
+    width: 20rem;
+    background-color: #fff;
+  }
+  
+  .notificationContainer[error] {
+    color: #ff0000;
+  }
+  
+  .notificationContainer[success] {
+    color: #5cb85c;
+  }
+  
+  .showLogin {
+    animation: forwards 1s moveLoginToLeft;
+  }
+  
+  .hideLogin {
+    animation: forwards 1s moveLoginToRight;
+  }
+  
+  .showSignUp {
+    animation: forwards 1s moveSignUpToRight;
+  }
+  
+  .hideSignUp {
+    animation: forwards 1s moveSignUpToLeft;
+  }
+  
+  @keyframes moveLoginToLeft {
+    from {
+      transform: translateX(200%);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes moveLoginToRight {
+    from {
+      transform: translateX(-50%);
+    }
+  
+    to {
+      transform: translateX(200%);
+    }
+  }
+  
+  @keyframes moveSignUpToLeft {
+    0% {
+      transform: translateX(50%);
+    }
+  
+    100% {
+      transform: translateX(-190%);
+    }
+  }
+  
+  @keyframes moveSignUpToRight {
+    0% {
+      transform: translateX(-190%);
+    }
+  
+    100% {
+      transform: translateX(50%);
+    }
+  }

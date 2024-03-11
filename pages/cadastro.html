@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro</title>
+        <link rel="stylesheet" href="cadastro_style.css">
+    </head>
+    <body>
+    <div class="signUpContainer">
+    <form onkeyup="signupButtonDisable()" class="formContainer" id="signUp">
+        <h1>Criar conta</h1>
+        <img src="" alt="" id="img" class="img">
+        <input type="file" accept="image/png, image/jpeg" onchange="addImg()" id="imgInput">
+        <input id="signupEmail" type="text" placeholder="Email">
+        <input id="signupName" type="text" placeholder="Nome">
+        <input id="signupAge" type="number" placeholder="Idade">
+        <input id="signupTelephone" type="tel" placeholder="Telefone" maxlength="16" onkeyup="telephoneMask()">
+        <input id="signupSalary" type="number" placeholder="Salário">
+        <input id="signupObser" type="text" placeholder="Observação (Opcional)">
+        <input autocomplete="none" id="signupPassword" type="password" placeholder="Senha">
+        <input autocomplete="none" id="signupConfirmPassword" type="password" placeholder="Confirmar Senha">
+        <div class="radioInputField">
+            <p>Sexo: </p>
+            <span>
+                <label for="m">M</label>
+                <input type="radio" name="sex" id="m" value="M" onchange="signupButtonDisable()">
+            </span>
+
+            <span>
+                <label for="f">F</label>
+                <input type="radio" name="sex" id="f" value="F" onchange="signupButtonDisable()">
+            </span>
+        </div>
+
+        <div class="radioInputField">
+            <p>Você fuma ?</p>
+            <span>
+                <label for="smokeTrue">Sim</label>
+                <input type="radio" name="smoke" id="smokeTrue" value="Sim" onchange="signupButtonDisable()">
+            </span>
+
+            <span>
+                <label for="smokeFalse">Não</label>
+                <input type="radio" name="smoke" id="smokeFalse" value="Não" onchange="signupButtonDisable()">
+            </span>
+        </div>
+
+        <div class="radioInputField">
+            <p>Possui plano de saúde ?</p>
+            <span>
+                <label for="heathPlanTrue">Sim</label>
+                <input type="radio" name="heathPlan" id="heathPlanTrue" value="Sim"
+                    onchange="signupButtonDisable()">
+            </span>
+
+            <span>
+                <label for="heathPlanFalse">Não</label>
+                <input type="radio" name="heathPlan" id="heathPlanFalse" value="Não"
+                    onchange="signupButtonDisable()">
+            </span>
+        </div>
+
+        <input disabled class="submitInput" type="submit" id="signUpBtn">
+        <!-- <button disabled class="submitInput" type="submit" id="signUpBtn">Cadastrar</button> -->
+
+        <span class="loginLink">
+            <p>Já possui uma conta ?</p>
+            <a onclick="changeForm('left')">login</a>
+        </span>
+    </form>
+    <form onkeyup="loginButtonDisable()" class="formContainer loginForm" id="loginForm">
+        <h1>Login</h1>
+        <input id="loginEmail" type="text" placeholder="Email">
+        <input autocomplete="none" id="loginPassword" type="password" placeholder="Senha">
+        <span class="forgotPassword">
+            <a>Esqueceu sua senha ?</a>
+        </span>
+        <input disabled class="submitInput" type="submit" id="loginBtn">
+        <!-- <button disabled class="submitInput" type="submit" id="loginBtn">Entrar</button> -->
+    
+        <span class="loginLink">
+            <p>Não possui conta ainda ?</p>
+            <a onclick="changeForm('right')">Cadastrar</a>
+        </span>
+    </form>
+</div>
+<div class="notificationContainer"></div>
+<script src="script.js"></script>
+</body>
+</html>

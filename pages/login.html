@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="cadastro_style.css">
+    </head>
+    <body>
+        <div class="signUpContainer">
+    <form onkeyup="loginButtonDisable()" class="formContainer loginForm" id="loginForm">
+    <h1>Login</h1>
+    <input id="loginEmail" type="text" placeholder="Email">
+    <input autocomplete="none" id="loginPassword" type="password" placeholder="Senha">
+    <span class="forgotPassword">
+        <a>Esqueceu sua senha ?</a>
+    </span>
+    <input disabled class="submitInput" type="submit" id="loginBtn">
+    <!-- <button disabled class="submitInput" type="submit" id="loginBtn">Entrar</button> -->
+
+    <span class="loginLink">
+        <p>Não possui conta ainda ?</p>
+        <a onclick="changeForm('right')">Cadastrar</a>
+    </span>
+</form>
+</div>
+<div class="notificationContainer"></div>
+<script src="script.js"></script>
+</body>
+</html>

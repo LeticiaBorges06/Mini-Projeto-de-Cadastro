@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="editar_perfil_style.css">
+<button onclick="editProfile()">Mostar Dados</button>
+
+<form id="editProfile" class="hideEditProfile">
+ 
+  <input type="text" id="editName" placeholder="Nome">
+  <input type="email" id="editEmail" placeholder="Email">
+  <input type="number" id="editAge" placeholder="Idade">
+  <input type="number" id="editTelephone" placeholder="Telefone">
+  <input type="number" id="editSalary" placeholder="Salario">
+  <input type="text" id="editSex" placeholder="Sexo">
+  <input type="number" id="editPassword" placeholder="Senha">
+
+  <button onclick="submitEditProfile()">Salvar Alterações</button>
+  <a href="entrada.html" class="button" id="loginButton">Voltar ao Inicio</a></form>
+
+<script>
+const editProfile = () => {
+
+  const user = JSON.parse(localStorage['user']);
+  document.querySelector("#editName").value = user.name;
+  document.querySelector("#editEmail").value = user.email;
+  document.querySelector("#editAge").value = user.age;
+  document.querySelector("#editTelephone").value = user.telephone;
+  document.querySelector("#editSalary").value = user.salary;
+  document.querySelector("#editSex").value = user.sex;
+  document.querySelector("#editPassword").value = user.password;
+
+  signUpForm.classList.add("hideSignUp");
+  document.querySelector("#editProfile").classList.remove("hideEditProfile");
+};
+
+const submitEditProfile = () => {
+    console.log("Função submitEditProfile chamada");
+  const editedUser = {
+    name: document.querySelector("#editName").value,
+    email: document.querySelector("#editEmail").value,
+    age: document.querySelector("#editAge").value,
+    telephone: document.querySelector("#editTelephone").value,
+    salary: document.querySelector("#editSalary").value,
+    sex: document.querySelector("#editSex").value,
+    password: document.querySelector("#editPassword").value,
+  };
+  if (Object.values(editedUser).some(value => value === "")) {
+    alert("Por favor, preencha todos os campos", "error");
+    return; // Impede o envio do formulário se algum campo estiver em branco
+  }
+  localStorage['user'] = JSON.stringify(editedUser);
+  alert('Perfil editado com sucesso', 'success');
+}
+</script>

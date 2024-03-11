@@ -44,6 +44,16 @@
                 <button onclick="editProfile()"><img src="Img Logo/editar dados.png" height="50px">Editar Perfil </button>
                 <button onclick="deleteProfile()"><img src="Img Logo/excluir conta.png" height="50px">Excluir Conta </button>
         <script>
+            const editProfile = () => {
+            window.location.href = "editar_perfil.html";
+    };
+            const deleteProfile = () =>{
+            if (confirm("Tem certeza que deseja excluir o perfil?")) {
+            localStorage.removeItem('user');
+            window.location.href = "index.html";
+            }
+            };
+
     const user = JSON.parse(localStorage['user']);
     document.getElementById('profileName').innerText = user.name || 'Nome não fornecido';
     document.getElementById('profileEmail').innerText = user.email || 'Email não fornecido';
